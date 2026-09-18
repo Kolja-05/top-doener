@@ -1,0 +1,1190 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+
+/* =========================================================
+   GRUNDLAGEN
+   ========================================================= */
+
+:root {
+    --red: #e30613;
+    --red-dark: #b8000b;
+
+    --white: #ffffff;
+    --black: #111111;
+
+    --light: #f7f7f7;
+    --border: #dddddd;
+    --muted: #6d6d6d;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: var(--white);
+    color: var(--black);
+
+    font-family: "DM Sans", sans-serif;
+
+    line-height: 1.5;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+
+a {
+    color: inherit;
+}
+
+
+.container {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.nav {
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+
+.logo img {
+    width: 150px;
+    height: auto;
+
+    display: block;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+
+nav a {
+    color: var(--black);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+
+nav a:hover {
+    color: var(--red);
+}
+
+
+.menu-button {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    padding: 110px 0 100px;
+
+    background: var(--white);
+}
+
+
+.hero-content {
+    display: grid;
+
+    grid-template-columns: 1.35fr 0.65fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.eyebrow {
+    display: block;
+
+    color: var(--red);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+
+.hero h1 {
+    max-width: 800px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(58px, 8vw, 105px);
+
+    line-height: 0.9;
+
+    letter-spacing: -6px;
+
+    margin-bottom: 35px;
+}
+
+
+.hero h1 span {
+    color: var(--red);
+
+    display: block;
+}
+
+
+.hero-text > p {
+    max-width: 600px;
+
+    color: var(--muted);
+
+    font-size: 19px;
+
+    margin-bottom: 35px;
+}
+
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    min-height: 52px;
+
+    padding: 14px 22px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.button-primary {
+    background: var(--red);
+    color: var(--white);
+}
+
+
+.button-primary:hover {
+    background: var(--red-dark);
+
+    transform: translateY(-2px);
+}
+
+
+.button-secondary {
+    border: 1px solid var(--black);
+
+    background: var(--white);
+
+    color: var(--black);
+}
+
+
+.button-secondary:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+
+/* HERO RATING */
+
+.hero-rating {
+    text-align: center;
+}
+
+
+.rating-circle {
+    width: 270px;
+    height: 270px;
+
+    margin: 0 auto;
+
+    border: 10px solid var(--red);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--white);
+}
+
+
+.rating-number {
+    color: var(--red);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 82px;
+    font-weight: 700;
+
+    line-height: 0.9;
+}
+
+
+.rating-out-of {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-top: 8px;
+}
+
+
+.hero-rating > p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-top: 20px;
+}
+
+
+.hero-rating h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 21px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   STATISTIKEN
+   ========================================================= */
+
+.statistics {
+    background: var(--red);
+
+    color: var(--white);
+}
+
+
+.statistics-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+.stat {
+    padding: 35px 20px;
+
+    border-right:
+        1px solid rgba(255, 255, 255, 0.35);
+}
+
+
+.stat:last-child {
+    border-right: none;
+}
+
+
+.stat strong {
+    display: block;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 40px;
+
+    line-height: 1;
+
+    margin-bottom: 8px;
+}
+
+
+.stat span {
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ALLGEMEINE SECTIONS
+   ========================================================= */
+
+.section {
+    padding: 110px 0;
+}
+
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 50px;
+
+    margin-bottom: 55px;
+}
+
+
+.section-heading h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 50px;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+}
+
+
+.section-heading > p {
+    max-width: 390px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   RANKING
+   ========================================================= */
+
+.ranking {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.kebab-card {
+    display: grid;
+
+    grid-template-columns: 70px 1fr 140px;
+
+    gap: 30px;
+
+    align-items: center;
+
+    padding: 30px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.kebab-card:hover {
+    transform: translateX(5px);
+
+    border-color: var(--red);
+}
+
+
+.kebab-card.featured {
+    border: 3px solid var(--red);
+}
+
+
+.rank {
+    color: #999;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+.location {
+    color: var(--red);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.kebab-info h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 30px;
+
+    line-height: 1.1;
+
+    margin: 5px 0 9px;
+}
+
+
+.kebab-info p {
+    max-width: 700px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+.tags {
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    margin-top: 15px;
+}
+
+
+.tags span {
+    padding: 5px 9px;
+
+    border: 1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+.rating {
+    text-align: right;
+}
+
+
+.rating strong {
+    display: block;
+
+    color: var(--red);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 54px;
+
+    line-height: 0.9;
+}
+
+
+.rating span {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BEWERTUNGSSYSTEM
+   ========================================================= */
+
+.score-section {
+    padding: 110px 0;
+
+    background: var(--red);
+
+    color: var(--white);
+}
+
+
+.score-layout {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 120px;
+}
+
+
+.score-section .eyebrow {
+    color: var(--white);
+}
+
+
+.score-intro h2 {
+    max-width: 500px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 64px;
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+}
+
+
+.score-intro h2 span {
+    display: block;
+
+    color: var(--white);
+}
+
+
+.score-intro > p {
+    max-width: 450px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    margin-top: 30px;
+}
+
+
+.score-row {
+    display: grid;
+
+    grid-template-columns: 110px 1fr;
+
+    gap: 25px;
+
+    padding: 23px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+.score-row strong {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 15px;
+}
+
+
+.score-row h4 {
+    font-size: 17px;
+
+    margin-bottom: 3px;
+}
+
+
+.score-row p {
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   KRITERIEN
+   ========================================================= */
+
+.criteria-section {
+    background: var(--light);
+}
+
+
+.criteria-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.criterion {
+    min-height: 230px;
+
+    padding: 30px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+}
+
+
+.criterion-number {
+    color: var(--red);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.criterion h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 25px;
+
+    margin: 45px 0 10px;
+}
+
+
+.criterion p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   EXPERTEN
+   ========================================================= */
+
+.experts-section {
+    background: var(--white);
+}
+
+
+.experts-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.expert {
+    padding: 32px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+}
+
+
+.avatar {
+    width: 58px;
+    height: 58px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 24px;
+
+    background: var(--red);
+
+    color: var(--white);
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-weight: 700;
+}
+
+
+.expert h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 23px;
+}
+
+
+.expert > span {
+    color: var(--red);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.expert p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   ÜBER UNS
+   ========================================================= */
+
+.about {
+    padding: 120px 0;
+
+    background: var(--black);
+
+    color: var(--white);
+}
+
+
+.about-content {
+    max-width: 900px;
+}
+
+
+.about .eyebrow {
+    color: var(--red);
+}
+
+
+.about h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(45px, 6vw, 80px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+}
+
+
+.about h2 span {
+    color: var(--red);
+}
+
+
+.about p {
+    max-width: 600px;
+
+    color: #aaa;
+
+    font-size: 18px;
+
+    margin-top: 35px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background: var(--black);
+
+    color: var(--white);
+
+    border-top:
+        1px solid #333;
+}
+
+
+.footer-content {
+    min-height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    font-size: 13px;
+}
+
+
+.footer-logo img {
+    width: 120px;
+
+    display: block;
+}
+
+
+.footer-content > span {
+    color: #777;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+.kebab-card {
+    opacity: 0;
+
+    transform: translateY(15px);
+}
+
+
+.kebab-card.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+
+    .hero-rating {
+        text-align: left;
+    }
+
+
+    .rating-circle {
+        margin-left: 0;
+    }
+
+
+    .statistics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .stat:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .score-layout {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+
+    .criteria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .experts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: min(100% - 30px, 600px);
+    }
+
+
+    .nav {
+        height: 70px;
+    }
+
+
+    .logo img {
+        width: 125px;
+    }
+
+
+    nav {
+        display: none;
+    }
+
+
+    .menu-button {
+        display: block;
+    }
+
+
+    nav.mobile-open {
+        display: flex;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+        right: 0;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+
+        background: var(--white);
+
+        border-bottom: 1px solid var(--border);
+    }
+
+
+    .hero {
+        padding: 70px 0;
+    }
+
+
+    .hero h1 {
+        font-size: 58px;
+
+        letter-spacing: -4px;
+    }
+
+
+    .hero-text > p {
+        font-size: 17px;
+    }
+
+
+    .rating-circle {
+        width: 210px;
+        height: 210px;
+
+        border-width: 8px;
+    }
+
+
+    .rating-number {
+        font-size: 65px;
+    }
+
+
+    .statistics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .stat {
+        padding: 25px 15px;
+    }
+
+
+    .stat strong {
+        font-size: 32px;
+    }
+
+
+    .section {
+        padding: 75px 0;
+    }
+
+
+    .section-heading {
+        display: block;
+
+        margin-bottom: 40px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 40px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .kebab-card {
+        grid-template-columns: 40px 1fr;
+
+        gap: 15px;
+
+        padding: 22px;
+    }
+
+
+    .kebab-card.featured {
+        border-width: 2px;
+    }
+
+
+    .kebab-info h3 {
+        font-size: 25px;
+    }
+
+
+    .rating {
+        grid-column: 2;
+
+        text-align: left;
+
+        margin-top: 10px;
+    }
+
+
+    .rating strong {
+        display: inline;
+
+        font-size: 42px;
+    }
+
+
+    .score-section {
+        padding: 75px 0;
+    }
+
+
+    .score-intro h2 {
+        font-size: 50px;
+    }
+
+
+    .score-row {
+        grid-template-columns: 85px 1fr;
+
+        gap: 15px;
+    }
+
+
+    .criteria-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .criterion {
+        min-height: auto;
+    }
+
+
+    .experts-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about {
+        padding: 80px 0;
+    }
+
+
+    .about h2 {
+        font-size: 48px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .footer-content {
+        min-height: 150px;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 25px 0;
+    }
+
+}
+
+/* Header Links Layout */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links a {
+    color: #333; /* Passe die Farbe an deine Design-Palette an */
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #ff4500; /* Akzentfarbe beim Drüberfahren */
+    transform: scale(1.1);
+}
+
+/* Kebab-Cards Link Styling */
+a.kebab-card {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.kebab-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
